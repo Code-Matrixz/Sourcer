@@ -13,6 +13,14 @@ const App = () => {
 
     const [IsLoading, setIsLoading] = useState(true);
 
+    useEffect(() => {
+        const timer = setTimeout(() =>{
+            setIsLoading(false);
+        }, 3000);
+
+        return () => clearTimeout(timer);
+    } ,[]);
+
     return (
         <Router>
             <Routes>
